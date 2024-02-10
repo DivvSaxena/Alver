@@ -1,0 +1,113 @@
+/* imports of fonts */
+@import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    margin: 0;
+}
+
+.container{
+    border: 2px solid black;
+    max-width: 390px;
+    min-height: 1000px;
+    margin: 0 auto;
+    background-color: #000;
+}
+
+nav h1{
+    color: #F5F4F4;
+    font-family: 'Just Me Again Down Here', cursive;
+    font-size: 3.438rem;
+    margin: 0;
+    padding: 0 0 0 0.4em;
+}
+
+.lineone{
+    position: relative;
+    top: -10px;
+}
+
+.input-field{
+    border-radius: 20px;
+    height: 165px;
+    border: 1px solid #F5F4F4;
+}
+
+.textbox{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    margin: 0.1em 0 0 1.2em;
+    height: 100px;
+    width: 320px;
+    border-radius: 20px;
+    text-align: start;
+    padding: 0 0 0 1em;
+    resize: none;
+}
+
+.image{
+    display: none;
+}
+
+.line{
+    border: 1px solid #F5F4F4;
+    width: 94%;
+    margin: 0.4em auto;
+}
+
+.labelforImage{
+    font-size: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+    color: #F5F4F4;
+}
+
+.sub-input-field{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+/* buttons */
+
+.postbtn{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid;
+    width: 90px;
+}
+
+.postbtn:hover{
+    cursor: pointer;
+}
+
+/* posts */
+
+.Post{
+    border: 2px solid #F5F4F4;
+    color: #F5F4F4;
+}
+
+.interactions{
+    color: #F5F4F4;
+    display: flex;
+}
+
+.icons{
+    font-size: 1.8rem;
+}
+
+.score{
+    font-size: 1rem;
+    text-align: center;
+}
+
+.score > h2{
+    margin: 0;
+}
+
+.comment{
+    margin-left: 1em;
+}
