@@ -31,7 +31,6 @@ nav h1{
 .input-field{
     border-radius: 20px;
     height: 165px;
-    border: 1px solid #F5F4F4;
 }
 
 .textbox{
@@ -52,7 +51,7 @@ nav h1{
 
 .line{
     border: 1px solid #F5F4F4;
-    width: 94%;
+    width: 100%;
     margin: 0.4em auto;
 }
 
@@ -87,7 +86,6 @@ nav h1{
 /* posts */
 
 .Post{
-    border: 2px solid #F5F4F4;
     color: #F5F4F4;
 }
 
