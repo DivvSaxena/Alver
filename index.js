@@ -134,7 +134,7 @@ function getFeed(item){
                         <h2>${item.countcomment}</h2>
                     </div>
                 </div>
-                <h3>${item.text}</h3>
+                <h3 class="image-description">${item.text}</h3>
             </div>`
 }
 

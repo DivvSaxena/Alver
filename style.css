@@ -110,3 +110,8 @@ nav h1{
 .comment{
     margin-left: 1em;
 }
+
+.image-description{
+    text-align: center;
+    margin: 0 0 0.5em 0;
+}
