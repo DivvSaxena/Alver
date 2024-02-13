@@ -226,7 +226,6 @@ function render(feedHtml){
     postsEl.innerHTML = feedHtml
 }
 
-
 function showLoggedOutView(){
     hideView(loggedInViewEl)
     showView(loggedOutViewEl)
