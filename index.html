@@ -22,26 +22,41 @@
             </nav>
         </header>
         <main>
-            <section>
-                <div class="input-field">
-                    <textarea placeholder="What is happening?"
-                              class="textbox"
-                              id="textbox"
-                    ></textarea>
-                    <div class="line"></div>
-                    <div class="sub-input-field">
-                        <label for="image" class="labelforImage"><i class="fa-solid fa-image"></i></label>
-                        <input type="file"
-                               accept="image/jpeg, image/png, image/jpg"
-                               class="image"
-                               id="image" 
-                        />
-                        <button class="postbtn" id="postbtn">Post</button>
+            <section id="loggedOutView">
+                <div class="container-auth">
+                    <div class="providers-button">
+                        <button id="sign-in-with-google" class="providers-btn">
+                            <img src="./assets/google-logo.png" alt="img of google-logo"/>
+                            <p>Sign in with Google</p>
+                        </button>
+                    </div>
+                    <div class="auth-fields-and-buttons">
+                        <input id="email-input" type="email" placeholder="Email" class="inputbtn">
+                        <input id="password-input" type="password" placeholder="Password" class="inputbtn">
+    
+                        <button id="sign-in-btn" class="primary-btn">Sign in</button>
+                        <button id="create-account-btn" class="secondary-btn">Create Account</button>
                     </div>
                 </div>
             </section>
-            <section id="posts">
-                
+            <section id="loggedInView">
+                    <div class="input-field">
+                        <textarea placeholder="What is happening?"
+                                  class="textbox"
+                                  id="textbox"
+                        ></textarea>
+                        <div class="line"></div>
+                        <div class="sub-input-field">
+                            <label for="image" class="labelforImage"><i class="fa-solid fa-image"></i></label>
+                            <input type="file"
+                                   accept="image/jpeg, image/png, image/jpg"
+                                   class="image"
+                                   id="image" 
+                            />
+                            <button class="postbtn" id="postbtn">Post</button>
+                        </div>
+                    </div>         
+                <div id="posts"></div>
             </section>
         </main>
     </div>

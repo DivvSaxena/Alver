@@ -2,6 +2,35 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import { getDatabase , ref as reference ,push , onValue} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 import { getStorage, ref , uploadBytes, getDownloadURL   } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"
+import { getAuth,
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    onAuthStateChanged,
+    signInWithPopup,
+    GoogleAuthProvider} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"
+
+// UI-Elements
+let postBtnEl = document.getElementById('postbtn')
+let textboxEl = document.getElementById('textbox')
+let imageEl = document.getElementById('image')
+let postsEl = document.getElementById('posts')
+let heartEl = document.getElementById('heart')
+let loggedInViewEl = document.getElementById('loggedInView')
+let loggedOutViewEl = document.getElementById('loggedOutView')
+let emailInputEl = document.getElementById('email-input')
+let passwordInputEl = document.getElementById('password-input')
+
+const signInButtonEl = document.getElementById('sign-in-btn')
+const createAccountButtonEl = document.getElementById('create-account-btn')
+
+
+
+const signInWithGoogleBtnEl = document.getElementById('sign-in-with-google')
+
+
+let posts = []
+let countheart = 0
+let countcomment = 0
 
 
 const firebaseConfig = {
@@ -23,16 +52,71 @@ const storage = getStorage()
 const storageRef = ref(storage)
 const imagesRef = ref(storage, 'images')
 
-// UI-Elements
-let postBtnEl = document.getElementById('postbtn')
-let textboxEl = document.getElementById('textbox')
-let imageEl = document.getElementById('image')
-let postsEl = document.getElementById('posts')
-let heartEl = document.getElementById('heart')
+/* === Event Listeners === */
 
-let posts = []
-let countheart = 0
-let countcomment = 0
+signInButtonEl.addEventListener('click', authSignInWithEmail)
+createAccountButtonEl.addEventListener('click', authCreateAccountWithEmail)
+
+signInWithGoogleBtnEl.addEventListener('click', authSignUpWithGoogle)
+
+
+//Auth
+const auth = getAuth(app)
+const provider = new GoogleAuthProvider()
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        showLoggedInView()
+    } else {
+      showLoggedOutView()
+    }
+  });
+
+  function authSignUpWithGoogle(){
+    signInWithPopup(auth, provider)
+  .then((result) => {
+    console.log('Sign in With Google')
+  }).catch((error) => {
+     alert(error.message)
+  })
+}
+
+function authSignInWithEmail(){
+
+    const email = emailInputEl.value
+    const password = passwordInputEl.value
+
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        clearAuthFields()
+    })
+    .catch((error) => {
+        alert(error.message)
+    })
+}
+
+function authCreateAccountWithEmail(){
+
+    const email = emailInputEl.value
+    const password = passwordInputEl.value
+
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        clearAuthFields()
+    })
+    .catch((error) => {
+        alert(error.message)
+    })
+}
+
+function clearAuthFields(){
+    emailInputEl.value = ''
+    passwordInputEl.value = ''
+}
+
+
+
+
 
 // Interactivity
 
@@ -140,4 +224,23 @@ function getFeed(item){
 
 function render(feedHtml){
     postsEl.innerHTML = feedHtml
+}
+
+
+function showLoggedOutView(){
+    hideView(loggedInViewEl)
+    showView(loggedOutViewEl)
+}
+
+function showLoggedInView(){
+    hideView(loggedOutViewEl)
+    showView(loggedInViewEl)
+}
+
+function showView(view){
+    view.style.display = 'flex'
+}
+
+function hideView(view){
+    view.style.display = 'none'
 }

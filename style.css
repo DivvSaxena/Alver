@@ -1,6 +1,8 @@
 /* imports of fonts */
 @import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
 
 body{
     margin: 0;
@@ -114,4 +116,82 @@ nav h1{
 .image-description{
     text-align: center;
     margin: 0 0 0.5em 0;
+}
+
+.container-auth{
+    max-width: 390px;
+    border: 2px solid black;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-image: url('./assets/bg-logout.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+
+
+/* === Buttons === */
+.providers-button{
+    background-color: #FFFEFC;
+    margin: 3em 0 0 0;
+    width: 310px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Capriola', sans-serif;
+}
+.providers-btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FFFEFC;
+    width: 100%;
+}
+
+.providers-btn > img{
+    width: 35px;
+    height: 35px;
+    margin-left: 1em;
+}
+
+.providers-btn > p{
+    font-size: 1.25rem;
+}
+
+.auth-fields-and-buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    font-family: 'Capriola', sans-serif;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.primary-btn{
+    font-size: 1.25rem;
+    padding: 1em;
+    margin-top: 0.5em;
+    background-color: #8ce0cf;
+}
+
+.secondary-btn{
+    font-size: 1.25rem;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    background-color: #62EEA8;
+}
+
+
+.inputbtn{
+    font-size: 1.25rem;
+    padding: 1em;
+    font-family: 'Capriola', sans-serif;
+    margin-top: 0.5em;
 }
